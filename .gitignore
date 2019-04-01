@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# QtCreator generated
+*.user
+build-*
