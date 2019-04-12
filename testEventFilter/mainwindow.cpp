@@ -1,31 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "myeventfilter.h"
-
-#include <QCoreApplication>
+#include "containerwidget.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui_(new Ui::MainWindow),
-    event_filter_(*this)
+    ui_(new Ui::MainWindow)
 {
     ui_->setupUi(this);
 
-    MyEventFilter event_filter(*this);
-
-    connect(ui_->exit_button_, &QPushButton::clicked, []()
-    {
-        QCoreApplication::instance()->exit();
-    });
+    auto* container_widget = new containerWidget(nullptr);
+    container_widget->show();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui_;
-}
-
-void MainWindow::printPosition(int x, int y)
-{
-    ui_->position_label_->setText(QString("Position X: %1, Y: %2").arg(x).arg(y));
 }

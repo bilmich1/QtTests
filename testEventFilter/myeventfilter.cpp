@@ -1,6 +1,6 @@
 #include "myeventfilter.h"
 
-#include "mainwindow.h"
+#include "containerwidget.h"
 
 #include <QApplication>
 #include <QAbstractEventDispatcher>
@@ -8,8 +8,8 @@
 #include <Windows.h>
 #include <windowsx.h>
 
-MyEventFilter::MyEventFilter(MainWindow& main_window)
-    : main_window_(main_window)
+MyEventFilter::MyEventFilter(containerWidget& container_widget)
+    : container_widget_(container_widget)
 {
     QApplication::instance()->eventDispatcher()->installNativeEventFilter(this);
 }
@@ -29,7 +29,7 @@ bool MyEventFilter::nativeEventFilter(const QByteArray &event_type, void *messag
         {
             int x = GET_X_LPARAM(msg->lParam);
             int y = GET_Y_LPARAM(msg->lParam);
-            main_window_.printPosition(x, y);
+            container_widget_.printPosition(x, y);
         }
     }
 

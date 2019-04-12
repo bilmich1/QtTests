@@ -27,14 +27,20 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    myeventfilter.cpp
+    myeventfilter.cpp \
+    containerwidget.cpp \
+    subwidget.cpp
 
 HEADERS += \
         mainwindow.h \
-    myeventfilter.h
+    myeventfilter.h \
+    containerwidget.h \
+    subwidget.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    containerwidget.ui \
+    subwidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

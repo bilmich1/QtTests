@@ -3,18 +3,18 @@
 
 #include <QAbstractNativeEventFilter>
 
-class MainWindow;
+class containerWidget;
 
 class MyEventFilter : public QAbstractNativeEventFilter
 {
 public:
-    MyEventFilter(MainWindow& main_window);
+    MyEventFilter(containerWidget& container_widget);
     ~MyEventFilter() override;
 
     bool nativeEventFilter(const QByteArray& event_type, void* message, long*) override;
 
 private:
-    MainWindow& main_window_;
+    containerWidget& container_widget_;
 };
 
 #endif // MYEVENTFILTER_H

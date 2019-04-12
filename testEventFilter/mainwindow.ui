@@ -14,22 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="position_label_">
-      <property name="text">
-       <string>Position: </string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="exit_button_">
-      <property name="text">
-       <string>exit</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <layout class="QVBoxLayout" name="verticalLayout"/>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
