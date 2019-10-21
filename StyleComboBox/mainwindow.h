@@ -19,6 +19,7 @@ private:
     Ui::MainWindow *ui;
 
     void addComboBox();
+    void addListView();
 };
 
 #endif // MAINWINDOW_H
